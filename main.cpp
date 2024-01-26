@@ -30,7 +30,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Game game;
 	Result result;
 
-	Scene currentScene = GAME; // 現在のシーンをここで変更
+	Scene currentScene = TITLE; // 現在のシーンをここで変更
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
@@ -53,6 +53,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			// ここにゲームに遷移する処理
 			if (keys[DIK_SPACE] && !preKeys[DIK_SPACE]) {
 				currentScene = GAME;
+				game.enemy_->Initialize();
+				game.player_->Initialize();
 			}
 
 			break;
@@ -65,10 +67,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			// ゲームの描画処理
 			game.Draw();
 
-			//// ここにリザルトに遷移する処理
-			//if (keys[DIK_SPACE] && !preKeys[DIK_SPACE]) {
-			//	currentScene = RESULT;
-			//}
+			// ここにリザルトに遷移する処理
+			if (game.enemy_->GetLife() == 0) {
+				currentScene = RESULT;
+			} else if (game.player_->GetHp() == 0) {
+				currentScene = RESULT;
+			}
 
 			break;
 
@@ -80,10 +84,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			// リザルトの描画処理
 			result.Draw();
 
-			//// ここにタイトルに遷移する処理
-			//if (keys[DIK_SPACE] && !preKeys[DIK_SPACE]) {
-			//	currentScene = TITLE;
-			//}
+			// ここにタイトルに遷移する処理
+			if (keys[DIK_SPACE] && !preKeys[DIK_SPACE]) {
+				currentScene = TITLE;
+			}
 
 			break;
 

@@ -49,6 +49,11 @@ void Bullet::SetPos(Vector2 pos)
 	pos_ = pos;
 }
 
+float Bullet::GetRadius()
+{
+	return radius_;
+}
+
 bool Bullet::GetIsShot()
 {
 	return isShot_;
