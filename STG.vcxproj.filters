@@ -53,6 +53,9 @@
     <Filter Include="Particle\EnemyDead">
       <UniqueIdentifier>{17f39c2d-17cf-42f1-849c-268b68bcc0eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\SceneManager">
+      <UniqueIdentifier>{23bbae3f-942f-4b1c-a06e-819df60450d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\DirectXCommon.cpp">
@@ -112,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="EnemyDeadEmitter.cpp">
       <Filter>Particle\EnemyDead</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Scene\SceneManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +228,9 @@
     </ClInclude>
     <ClInclude Include="EnemyDeadParticle.h">
       <Filter>Particle\EnemyDead</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Scene\SceneManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
