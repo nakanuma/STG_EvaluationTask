@@ -53,6 +53,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			// ここにゲームに遷移する処理
 			if (keys[DIK_SPACE] && !preKeys[DIK_SPACE]) {
 				currentScene = GAME;
+				// オブジェクトの初期化を行う
 				game.enemy_->Initialize();
 				game.player_->Initialize();
 			}
