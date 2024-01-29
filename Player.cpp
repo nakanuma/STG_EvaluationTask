@@ -39,16 +39,16 @@ void Player::Initialize()
 void Player::Update(char* keys, char* preKeys)
 {
 	// キー入力で移動
-	if (keys[DIK_W]) {
+	if (keys[DIK_W] || keys[DIK_UP]) {
 		pos_.y -= speed_;
 	}
-	if (keys[DIK_S]) {
+	if (keys[DIK_S] || keys[DIK_DOWN]) {
 		pos_.y += speed_;
 	}
-	if (keys[DIK_A]) {
+	if (keys[DIK_A] || keys[DIK_LEFT]) {
 		pos_.x -= speed_;
 	}
-	if (keys[DIK_D]) {
+	if (keys[DIK_D] || keys[DIK_RIGHT]) {
 		pos_.x += speed_;
 	}
 
@@ -122,9 +122,9 @@ void Player::Draw()
 		);
 	}
 
-	Novice::ScreenPrintf(0, 100, "playerHP = %d", hp_);
+	/*Novice::ScreenPrintf(0, 100, "playerHP = %d", hp_);
 	Novice::ScreenPrintf(0, 120, "isInvincivle = %d", isInvincible_);
-	Novice::ScreenPrintf(0, 140, "invincivleTimer = %d", invincibleTimer_);
+	Novice::ScreenPrintf(0, 140, "invincivleTimer = %d", invincibleTimer_);*/
 
 }
 

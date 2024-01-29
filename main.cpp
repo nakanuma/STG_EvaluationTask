@@ -32,6 +32,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	Scene currentScene = TITLE; // 現在のシーンをここで変更
 
+	bool isWin = false;
+
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
 		// フレームの開始
@@ -50,12 +52,17 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			// タイトルの描画処理
 			title.Draw();
 
-			// ここにゲームに遷移する処理
+			// ゲームに遷移する処理
 			if (keys[DIK_SPACE] && !preKeys[DIK_SPACE]) {
 				currentScene = GAME;
 				// オブジェクトの初期化を行う
 				game.enemy_->Initialize();
 				game.player_->Initialize();
+
+				game.bulletHitEmitter_.listClear();
+				game.enemyDeadEmitter_.listClear();
+
+				isWin = false;
 			}
 
 			break;
@@ -68,11 +75,15 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			// ゲームの描画処理
 			game.Draw();
 
-			// ここにリザルトに遷移する処理
+			// リザルトに遷移する処理
 			if (game.enemy_->GetLife() == 0) {
-				currentScene = RESULT;
+				if (game.enemy_->GetReviveTimer() < 30) { // 敵が撃破されてから少し間を空ける
+					currentScene = RESULT;
+					isWin = true;
+				}
 			} else if (game.player_->GetHp() == 0) {
 				currentScene = RESULT;
+				isWin = false;
 			}
 
 			break;
@@ -84,8 +95,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 			// リザルトの描画処理
 			result.Draw();
-
-			// ここにタイトルに遷移する処理
+			if (isWin == true) {
+				result.DrawWin();
+			} else {
+				result.DrawLose();
+			}
+			
+			// タイトルに遷移する処理
 			if (keys[DIK_SPACE] && !preKeys[DIK_SPACE]) {
 				currentScene = TITLE;
 			}

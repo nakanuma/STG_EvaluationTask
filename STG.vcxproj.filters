@@ -41,6 +41,18 @@
     <Filter Include="Object\Enemy">
       <UniqueIdentifier>{bf8ab4fb-af6f-4b1f-907f-617ace3c80f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Particle">
+      <UniqueIdentifier>{228d729e-9f90-4823-8e49-fa6e6a15ba9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle\BulletHit">
+      <UniqueIdentifier>{375c1d00-f937-46e1-857c-d77fe294905e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle\Util">
+      <UniqueIdentifier>{00225f69-b910-4674-92b2-e1bd68d9e8c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle\EnemyDead">
+      <UniqueIdentifier>{17f39c2d-17cf-42f1-849c-268b68bcc0eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\DirectXCommon.cpp">
@@ -85,6 +97,21 @@
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletHitParticle.cpp">
+      <Filter>Particle\BulletHit</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletHitEmitter.cpp">
+      <Filter>Particle\BulletHit</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Particle\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyDeadParticle.cpp">
+      <Filter>Particle\EnemyDead</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyDeadEmitter.cpp">
+      <Filter>Particle\EnemyDead</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +207,21 @@
     <ClInclude Include="Define.h" />
     <ClInclude Include="Enemy.h">
       <Filter>Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletHitParticle.h">
+      <Filter>Particle\BulletHit</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletHitEmitter.h">
+      <Filter>Particle\BulletHit</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>Particle\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyDeadEmitter.h">
+      <Filter>Particle\EnemyDead</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyDeadParticle.h">
+      <Filter>Particle\EnemyDead</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -23,6 +23,9 @@ public:
 	bool GetIsAlive();
 
 	int GetLife();
+	int GetHp();
+
+	int GetReviveTimer();
 
 private:
 	int enemyGH_ = Novice::LoadTexture("./Resources/images/enemy.png");

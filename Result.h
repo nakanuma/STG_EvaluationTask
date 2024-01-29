@@ -1,5 +1,7 @@
 ﻿#pragma once
 #include "Base.h"
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 class Result : public Base
 {
@@ -10,7 +12,15 @@ public:
 	void Update() override;
 	void Draw() override;
 
+	void DrawWin();
+	void DrawLose();
+
 private:
-	int resultGH_ = Novice::LoadTexture("./Resources/images/result.png");
+	int pushSpaceKeyGH_ = Novice::LoadTexture("./Resources/images/pushSpaceKey.png");
+	int triangleGH_ = Novice::LoadTexture("./Resources/images/triangle.png");
+	int winGH_ = Novice::LoadTexture("./Resources/images/resultWin.png");
+	int loseGH_ = Novice::LoadTexture("./Resources/images/resultLose.png");
+
+	int count_;
 };
 

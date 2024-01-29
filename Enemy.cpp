@@ -68,9 +68,9 @@ void Enemy::Draw()
 		);
 	}
 
-	Novice::ScreenPrintf(0, 0, "enemyHP = %d", hp_);
+	/*Novice::ScreenPrintf(0, 0, "enemyHP = %d", hp_);
 	Novice::ScreenPrintf(0, 20, "enemyReviveTimer = %d", reviveTimer_);
-	Novice::ScreenPrintf(0, 40, "life = %d", life_);
+	Novice::ScreenPrintf(0, 40, "life = %d", life_);*/
 }
 
 void Enemy::OnCollision()
@@ -96,4 +96,14 @@ bool Enemy::GetIsAlive()
 int Enemy::GetLife()
 {
 	return life_;
+}
+
+int Enemy::GetHp()
+{
+	return hp_;
+}
+
+int Enemy::GetReviveTimer()
+{
+	return reviveTimer_;
 }
